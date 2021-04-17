@@ -1,0 +1,7 @@
+https://blocklistproject.github.io/Lists/ads.txt
+https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
+https://raw.githubusercontent.com/Ewpratten/youtube_ad_blocklist/master/blocklist.txt
+https://raw.githubusercontent.com/Ewpratten/youtube_ad_blocklist/master/blocklist.txt
+https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt
+https://raw.githubusercontent.com/ookangzheng/blahdns/master/hosts/blacklist.txt
+https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt
