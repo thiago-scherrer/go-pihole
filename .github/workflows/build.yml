@@ -1,0 +1,17 @@
+name: go-pihole-build
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: build
+        run: |
+          cd cmd
+          go build
+
