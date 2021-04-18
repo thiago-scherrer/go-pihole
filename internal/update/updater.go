@@ -2,6 +2,7 @@ package update
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/thiago-scherrer/go-pihole/internal/reader"
@@ -10,6 +11,7 @@ import (
 func Run() error {
 	list, err := reader.Getlist()
 	if err != nil {
+		log.Println(err)
 		return err
 	}
 
@@ -22,6 +24,7 @@ func Run() error {
 func getDomains(url string) ([]string, error) {
 	resp, err := http.Get(url)
 	if err != nil {
+		log.Println(err)
 		return nil, err
 	}
 	defer resp.Body.Close()
@@ -29,6 +32,7 @@ func getDomains(url string) ([]string, error) {
 	content := make([]byte, 1014)
 	c, err := resp.Body.Read(content)
 	if err != nil {
+		log.Println(err)
 		return nil, err
 	}
 
