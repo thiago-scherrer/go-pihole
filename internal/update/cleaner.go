@@ -56,7 +56,7 @@ func rmNonDomains(domains string) (string, error) {
 	myRegex, _ = regexp.Compile(`(127.0.0.1 )`)
 	altered = myRegex.ReplaceAllString(altered, "")
 
-	myRegex, _ = regexp.Compile(`(localhost )`)
+	myRegex, _ = regexp.Compile(`( localhost)`)
 	altered = myRegex.ReplaceAllString(altered, "")
 
 	return altered, nil
