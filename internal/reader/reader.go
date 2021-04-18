@@ -8,8 +8,7 @@ import (
 )
 
 var (
-	// ErrNeedEnv return custom log error
-	ErrNeedEnv = errors.New("[error]: need LIST env to check new blocklist")
+	errNeedEnv = errors.New("[error]: need LIST env to check new blocklist")
 )
 
 // Getlist return blocklist to use on sync
@@ -18,8 +17,8 @@ func Getlist() ([]string, error) {
 
 	list := os.Getenv("LIST")
 	if len(list) == 0 {
-		log.Println(ErrNeedEnv)
-		return nil, ErrNeedEnv
+		log.Println(errNeedEnv)
+		return nil, errNeedEnv
 	}
 
 	file, err := os.Open(list)

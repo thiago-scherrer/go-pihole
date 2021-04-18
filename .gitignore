@@ -16,3 +16,6 @@
 
 # tmp vim files
 *.swp
+
+# Build files
+build/*
