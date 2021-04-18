@@ -1,7 +1,6 @@
 package update
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -31,7 +30,7 @@ func getDomains(url string) ([]byte, error) {
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		fmt.Println("[erro] http.get failed: ", err)
+		log.Println("[erro] http.get failed: ", err)
 		return nil, err
 	}
 
