@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: build
         run: |
+          ls -halR
           cd cmd
           go build
 
