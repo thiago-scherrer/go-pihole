@@ -1,26 +1,38 @@
 package reader
 
 import (
-	"io/ioutil"
-	"log"
+	"bufio"
+	"errors"
 	"os"
 )
 
-func check(e error) {
-	if e != nil {
-		log.Fatal(e)
-	}
-}
+var (
+	ErrNeedEnv = errors.New("need LIST env to check new blocklist")
+)
 
 // Getlist return blocklist to use on sync
-func Getlist() (string, error) {
+func Getlist() ([]string, error) {
+	var url []string
+
 	list := os.Getenv("LIST")
-	if len(list) <= 0 {
-		log.Fatal("Need LIST env to check new blocklist")
+	if len(list) == 0 {
+		return nil, ErrNeedEnv
 	}
 
-	dat, err := ioutil.ReadFile(list)
-	check(err)
+	file, err := os.Open(list)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
 
-	return string(dat), nil
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		url = append(url, string(scanner.Text()))
+
+	}
+
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+	return url, nil
 }

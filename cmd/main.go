@@ -1,7 +1,9 @@
 package main
 
-import "github.com/thiago-scherrer/go-pihole/internal/reader"
+import (
+	"github.com/thiago-scherrer/go-pihole/internal/update"
+)
 
 func main() {
-	reader.Getlist()
+	update.Run()
 }
