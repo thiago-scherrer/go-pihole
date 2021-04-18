@@ -1,7 +1,7 @@
 package update
 
 import (
-	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 
@@ -21,24 +21,20 @@ func Run() error {
 	return nil
 }
 
-func getDomains(url string) ([]string, error) {
+func getDomains(url string) ([]byte, error) {
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Println(err)
 		return nil, err
 	}
 	defer resp.Body.Close()
-
-	content := make([]byte, 1014)
-	c, err := resp.Body.Read(content)
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Println(err)
+		log.Println("[erro] http.get failed: ", err)
 		return nil, err
 	}
 
-	a := string(content[:c])
-
-	fmt.Println(a)
+	Clean(body)
 
 	return nil, nil
 }
