@@ -8,6 +8,7 @@ import (
 )
 
 var (
+	// ErrNeedEnv return custom log error
 	ErrNeedEnv = errors.New("[error]: need LIST env to check new blocklist")
 )
 

@@ -8,6 +8,7 @@ import (
 	"github.com/thiago-scherrer/go-pihole/internal/reader"
 )
 
+// Run function get all blocklist
 func Run() error {
 	list, err := reader.Getlist()
 	if err != nil {
