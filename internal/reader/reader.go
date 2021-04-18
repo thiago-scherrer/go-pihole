@@ -12,6 +12,7 @@ func check(e error) {
 	}
 }
 
+// Getlist return blocklist to use on sync
 func Getlist() (string, error) {
 	list := os.Getenv("LIST")
 	if len(list) <= 0 {
