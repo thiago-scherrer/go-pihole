@@ -5,6 +5,14 @@ import (
 	"testing"
 )
 
+func TestCheck(t *testing.T) {
+	os.Setenv("LIST", "mock.txt")
+	_, err := Getlist()
+
+	check(err)
+
+}
+
 func TestGetlist(t *testing.T) {
 	os.Setenv("LIST", "mock.txt")
 
