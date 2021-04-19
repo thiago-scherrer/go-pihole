@@ -28,43 +28,30 @@ func Clean(domains []byte) ([]string, error) {
 		log.Print(err)
 		return nil, err
 	}
+
 	writeDom(spc)
 	return nil, nil
 }
 
 func rmComent(domains []byte) (string, error) {
-	var altered string
-
 	myRegex := regexp.MustCompile(`(?m)^#(.*)`)
-	a1 := myRegex.ReplaceAllString(string(domains), "")
+	altered := myRegex.ReplaceAllString(string(domains), "")
 
 	myRegex = regexp.MustCompile(`(?m)#(.*)`)
-	altered = myRegex.ReplaceAllString(string(a1), "")
+	altered = myRegex.ReplaceAllString(string(altered), "")
 
 	return altered, nil
 }
 
 func rmNonDomains(domains string) (string, error) {
-	var altered string
-
-	myRegex := regexp.MustCompile(`(?m)^repo(.*)`)
-	altered = myRegex.ReplaceAllString(domains, "")
-
-	myRegex, _ = regexp.Compile(`(0.0.0.0 )`)
-	altered = myRegex.ReplaceAllString(altered, "")
-
-	myRegex, _ = regexp.Compile(`(127.0.0.1 )`)
-	altered = myRegex.ReplaceAllString(altered, "")
-
-	myRegex, _ = regexp.Compile(`( localhost)`)
-	altered = myRegex.ReplaceAllString(altered, "")
+	myRegex := regexp.MustCompile(`(?m)^repo(.*)|(0.0.0.0)|(127.0.0.1)|(localhost)|( )|(\n\n)|(\t)`)
+	altered := myRegex.ReplaceAllString(domains, "")
 
 	return altered, nil
 }
 
 func writeDom(domains string) ([]string, error) {
 	output := os.Getenv("OUTPUT")
-
 	if len(output) <= 1 {
 		log.Println(errNeedOutput)
 		return nil, errNeedOutput
