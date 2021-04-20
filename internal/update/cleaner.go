@@ -46,7 +46,7 @@ func rmComent(domains []byte) (string, error) {
 func rmNonDomains(domains string) (string, error) {
 	myRegex :=
 		regexp.MustCompile(`(?m)^repo(.*)|(0.0.0.0)|(127.0.0.1)|(localhost)|(
-  )|(\n\n)|(\t)|(@)`)
+  )|(\n\n)|(\t)|((?m)@)|( )`)
 	altered := myRegex.ReplaceAllString(domains, "")
 
 	return altered, nil
