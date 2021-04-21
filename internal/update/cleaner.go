@@ -13,8 +13,6 @@ var (
 
 // Clean function can be used for remove noise from blocklist
 func Clean(domains []byte) ([]string, error) {
-	//myRegex, _ := regexp.Compile(`(#)`)
-
 	com, err := rmComent(domains)
 
 	if err != nil {
@@ -46,8 +44,12 @@ func rmComent(domains []byte) (string, error) {
 func rmNonDomains(domains string) (string, error) {
 	myRegex :=
 		regexp.MustCompile(`(?m)^repo(.*)|(0.0.0.0)|(127.0.0.1)|(localhost)|(
-  )|(\n\n)|(\t)|((?m)@)|( )`)
+  )|(\n\n)|(\t)|((?m)@)|( )|(ff02::)`)
 	altered := myRegex.ReplaceAllString(domains, "")
+
+	myRegex =
+		regexp.MustCompile(`<br>`)
+	altered = myRegex.ReplaceAllString(altered, "\n")
 
 	return altered, nil
 }

@@ -40,13 +40,15 @@ func TestRmNonDomains(t *testing.T) {
 		mock string
 		want string
 	}{
-		{"Comment start", "repo example.com", ""},
-		{"Comment middle", "0.0.0.0 example.com", "example.com"},
-		{"Comment middle", "127.0.0.1 example.com", "example.com"},
-		{"Comment middle", "localhost example.com", "example.com"},
-		{"Comment middle", "\n\n example.com", "example.com"},
-		{"Comment middle", "\t example.com", "example.com"},
-		{"Comment middle", "@ example.com", "example.com"},
+		{"Test 1", "repo example.com", ""},
+		{"Test 2", "0.0.0.0 example.com", "example.com"},
+		{"Test 3", "127.0.0.1 example.com", "example.com"},
+		{"Test 4", "localhost example.com", "example.com"},
+		{"Test 5", "\n\n example.com", "example.com"},
+		{"Test 6", "\t example.com", "example.com"},
+		{"Test 7", "example.org<br>exemple.com", "example.org\nexemple.com"},
+		{"Test 8", "@ example.com", "example.com"},
+		{"Test 9", "ff02::example.com", "example.com"},
 	}
 
 	for _, tt := range tests {
