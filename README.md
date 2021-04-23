@@ -21,6 +21,7 @@ Build:
 
 ```sh
 cd go-pihole
+mkdir build
 go build -o build/go-pihole cmd/go-pihole.go
 ```
 
