@@ -50,6 +50,7 @@ func TestRmNonDomains(t *testing.T) {
 		{"Test 7", "example.org<BR>exemple.com", "example.org\nexemple.com"},
 		{"Test 8", "@ example.com", "example.com"},
 		{"Test 9", "ff02::example.com", "example.com"},
+		{"Test 10", "::1example.com", "example.com"},
 	}
 
 	for _, tt := range tests {
