@@ -28,7 +28,7 @@ func TestRmComent(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got, _ := rmComent([]byte(tt.mock)); got != tt.want {
-				t.Errorf("rmComent() = %v, want %v", got, tt.want)
+				t.Errorf("%v: rmComent() = %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -44,23 +44,19 @@ func TestRmNonDomains(t *testing.T) {
 		{"Test 2", "0.0.0.0 example.com", "example.com"},
 		{"Test 3", "127.0.0.1 example.com", "example.com"},
 		{"Test 4", "localhost example.com", "example.com"},
-		{"Test 5", "\n\n example.com", "example.com"},
-		{"Test 6", "\t example.com", "example.com"},
-		{"Test 7", "example.org<br>exemple.com", "example.org\nexemple.com"},
-		{"Test 7", "example.org<BR>exemple.com", "example.org\nexemple.com"},
-		{"Test 8", "@ example.com", "example.com"},
-		{"Test 9", "ff02::example.com", "example.com"},
-		{"Test 10", "::1example.com", "example.com"},
+		{"Test 5", "example.org<br>exemple.com", "example.org\nexemple.com"},
+		{"Test 6", "example.org<BR>exemple.com", "example.org\nexemple.com"},
+		{"Test 7", "@ example.com", "example.com"},
+		{"Test 8", "::1example.com", ""},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got, _ := rmNonDomains(tt.mock); got != tt.want {
-				t.Errorf("rmComent() = %v, want %v", got, tt.want)
+				t.Errorf("%v: rmNonDomains() = %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
-
 }
 
 func TestWriteDom(t *testing.T) {

@@ -4,28 +4,33 @@
 
 A simple golang project to update pi-hole-block-list project
 
-### Requirements
+## Requirements
 
 - go >= 1.16.3
+- Internet to update 
 
-
-### Running
+## Running
 
 Clone:
+
 ```sh
 git clone https://github.com/thiago-scherrer/go-pihole.git
 ```
 
 Build:
+
 ```sh
 cd go-pihole
-go build cmd/go-pihole.go
+mkdir build
+go build -o build/go-pihole cmd/go-pihole.go
 ```
 
 Running
+
 ```sh
+cd build
 export LIST=<list to consult>
-export OUTPUT=<where to save>
+export OUTPUT=<where to save output>
 ./go-pihole
 ```
 
