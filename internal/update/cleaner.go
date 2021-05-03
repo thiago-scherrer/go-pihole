@@ -53,9 +53,6 @@ func rmNonDomains(domains string) (string, error) {
 	myRegex = regexp.MustCompile(`(\s)`)
 	altered = myRegex.ReplaceAllString(altered, "\n")
 
-	myRegex = regexp.MustCompile(`(?m)^\s*$|\n\n`)
-	altered = myRegex.ReplaceAllString(altered, "")
-
 	return altered, nil
 }
 
