@@ -10,7 +10,6 @@ https://blocklistproject.github.io/Lists/alt-version/fraud-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/gambling-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/malware-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/phishing-nl.txt
-https://blocklistproject.github.io/Lists/alt-version/piracy-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/ransomware-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/redirect-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/scam-nl.txt
