@@ -5,7 +5,6 @@ https://blocklistproject.github.io/Lists/alt-version/abuse-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/ads-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/crypto-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/drugs-nl.txt
-https://blocklistproject.github.io/Lists/alt-version/facebook-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/fraud-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/gambling-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/malware-nl.txt
@@ -13,7 +12,6 @@ https://blocklistproject.github.io/Lists/alt-version/phishing-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/ransomware-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/redirect-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/scam-nl.txt
-https://blocklistproject.github.io/Lists/alt-version/tiktok-nl.txt
 https://blocklistproject.github.io/Lists/alt-version/tracking-nl.txt
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt
@@ -26,7 +24,6 @@ https://phishing.army/download/phishing_army_blocklist_extended.txt
 https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt
 https://raw.githubusercontent.com/AdroitAdorKhan/EnergizedProtection/master/core/hosts
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
-https://raw.githubusercontent.com/EnergizedProtection/unblock/master/basic/formats/domains.txt
 https://raw.githubusercontent.com/Ewpratten/youtube_ad_blocklist/master/blocklist.txt
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.2o7Net/hosts
