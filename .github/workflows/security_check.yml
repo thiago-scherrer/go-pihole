@@ -1,4 +1,4 @@
-name: go-pihole-security-check
+name: security-check
 
 on:
   push:

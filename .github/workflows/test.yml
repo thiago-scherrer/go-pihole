@@ -1,9 +1,21 @@
-name: build
+name: test
 
 on:
   push:
 
 jobs:
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Check out repository
+        uses: actions/checkout@v2
+      -
+        name: go test
+        run: |
+          go test -cover ./...
 
   build:
     name: build
