@@ -1,9 +1,11 @@
-name: Security check
-
-on: [push]
+name: go-pihole-security-check
+on:
+  push:
 
 jobs:
-  build-and-test:
+  security-check:
+    name: security-check
+    runs-on: ubuntu-latest
     steps:
       -
         name: Checkout project
