@@ -1,0 +1,16 @@
+name: Security check
+
+on: [push]
+
+jobs:
+  build-and-test:
+    steps:
+      -
+        name: Checkout project
+        uses: actions/checkout@v2
+      -
+        name: Salus Scan
+        run: |
+          docker run --rm -t \
+            -v $(pwd):/home/repo coinbase/salus \
+            --config "file://salus-config.yml"

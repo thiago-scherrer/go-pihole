@@ -33,4 +33,3 @@ export LIST=<list to consult>
 export OUTPUT=<where to save output>
 ./go-pihole
 ```
-
