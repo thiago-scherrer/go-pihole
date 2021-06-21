@@ -1,15 +1,19 @@
 name: go-pihole-build
+
 on:
   push:
+
 jobs:
+
   test:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      -
+        name: Check out repository
         uses: actions/checkout@v2
-
-      - name: go test
+      -
+        name: go test
         run: |
           go test -cover ./...
 
@@ -17,10 +21,11 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      -
+        name: Check out repository
         uses: actions/checkout@v2
-
-      - name: build
+      -
+        name: build
         run: |
           cd cmd
           go build
