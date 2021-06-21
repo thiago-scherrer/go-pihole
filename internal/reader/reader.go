@@ -5,6 +5,7 @@ import (
 	"errors"
 	"log"
 	"os"
+	"path/filepath"
 )
 
 var (
@@ -21,7 +22,7 @@ func Getlist() ([]string, error) {
 		return nil, errNeedEnv
 	}
 
-	file, err := os.Open(list)
+	file, err := os.Open(filepath.Clean(list))
 	if err != nil {
 		log.Println(err)
 		return nil, err
